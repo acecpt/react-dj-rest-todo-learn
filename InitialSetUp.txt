@@ -1,0 +1,84 @@
+https://www.youtube.com/watch?v=FdMf_3SurOA
+
+$ pip install django
+$ pip install djangorestframework django-cors-headers
+$ django-admin startproject backend
+$ cd backend
+$ python manage.py startapp todo
+
+$ npm create vite@latest frontend -- --template react
+$ cd frontend
+$ npm install
+
+$ cd backend
+~TodoApp/backend$ python manage.py runserver
+$ cd frontend
+~TodoApp/frontend$ npm run dev
+
+in backend/backend/settings.py
+CORS_ALLOWED_ORIGINS = [
+    "http://localhost:5173",
+    "http://127.0.0.1:5173",
+]
+
+INSTALLED_APPS = [
+    ...
+    # External
+    'rest_framework',
+    'corsheaders',
+    # Internal INSTALLED_APPS
+    'todo',
+    ...
+]
+
+MIDDLEWARE = [
+    ...
+    'corsheaders.middleware.CorsMiddleware',
+    'django.middleware.common.CommonMiddleware',
+    ...
+]
+
+up to minute 13:28 https://youtu.be/FdMf_3SurOA&t=808
+
+
+in todo$ models.py, serializers.py, views.py, urls.py , admin.py
+in backend$ urls.py
+
+https://youtu.be/FdMf_3SurOA&t=1660
+~backend$ python manage.py makemigrations
+~backend$ python manage.py migrate
+~backend$ python manage.py createsuperuser
+cptace cptace y
+
+clean out ~frontend/src$ App.css, index.css, App.jsx to install tailwind
+~frontend$ npm install -D tailwindcss postcss autoprefixer
+    postcss and autoprefixer parse CSS and vendor prefixes to CSS rules
+!frontend$ npx tailwindcss init -p
+in tailwind.config.js add
+    content: [
+        "./index.html",
+        "./src/**/*.{js,ts,jsx,tsx}",
+    ],
+in ./src/index.css add
+    @tailwind base;
+    @tailwind components;
+    @tailwind utilities;
+
+create ~src/components/Table.jsx TodoForm.jsx and import to App.jsx
+~frontend$ npm install react-icons --save
+build out styling in Table.jsx
+move on to TodoForm.jsx install daisyui
+~frontend$ npm i daisyui
+in tailwind.config.js add
+    module.exports = {
+        //...
+        plugins: [require("daisyui)],
+    }
+
+on to fetching data in the table and posting via TodoForm 
+https://youtu.be/FdMf_3SurOA&t=4011
+~frontend$ npm install axios
+add axios to App.jsx with useEffect and fetchData and isLoading
+
+So CRUD is 'done' https://youtu.be/FdMf_3SurOA?t=7141
+just need to add functionality to the 'edit' icon for Update/Patch calls
