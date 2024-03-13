@@ -6,6 +6,7 @@ $ django-admin startproject backend
 $ cd backend
 $ python manage.py startapp todo
 
+$ npm install vite
 $ npm create vite@latest frontend -- --template react
 $ cd frontend
 $ npm install
@@ -53,7 +54,7 @@ cptace cptace y
 clean out ~frontend/src$ App.css, index.css, App.jsx to install tailwind
 ~frontend$ npm install -D tailwindcss postcss autoprefixer
     postcss and autoprefixer parse CSS and vendor prefixes to CSS rules
-!frontend$ npx tailwindcss init -p
+~frontend$ npx tailwindcss init -p
 in tailwind.config.js add
     content: [
         "./index.html",
@@ -82,3 +83,14 @@ add axios to App.jsx with useEffect and fetchData and isLoading
 
 So CRUD is 'done' https://youtu.be/FdMf_3SurOA?t=7141
 just need to add functionality to the 'edit' icon for Update/Patch calls
+
+
+-------------------Swagger UX on DJRF------------------- 
+https://youtu.be/XBxssKYf5G0
+
+~backend$pip install drf-spectacular
+https://drf-spectacular.readthedocs.io/en/latest/readme.html
+
+~backend$ ./manage.py spectacular --file schema.yml
+create the schema
+add it to the urls.py (link above)
